@@ -1,0 +1,50 @@
+<div class="form--container">
+
+
+  <div class="personal--info-container">
+
+    <div class="personal--info-title"  >
+      <h2>Pick add-ons</h2>
+      <p>Add-ons help enhance your gaming experience.</p>
+    </div>
+
+<div>
+
+  <div class="row col" *ngFor="let addOn of addOns; let i = index"  [ngStyle]="{'background-color': addOn.isActive ? '#DFDFFF' : 'transparent'}" (change)="pushToExtras(i, $event)">
+    <div class="card one ">
+
+
+      <div class="form-check">
+     <div class="chck" >
+          <input  class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="pushToExtras(i, $event)">
+       </div>
+
+
+        <div class="card-body">
+<div class="one">
+  <label class="form-check-label checkFor" for="flexCheckDefault">
+    {{ addOn.name }}
+    </label>
+ <h5 class="card-title">{{ addOn.description }}</h5>
+</div>
+
+          <div class="card-body" >
+            <p *ngIf="monthly" class="card-text secondary">+${{ addOn.price }}/mo</p>
+            <p *ngIf="!monthly" class="card-text secondary">+${{ addOn.yearlyPrice }}/yr</p>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+    <div class="form--buttons">
+      <a  class="linkZaNazad" (click)="onPrevStep(2)">Go Back</a>
+      <button
+      class="btn btn-primary submit"
+      (click)="onNextStep(4); completeStep()"
+      [disabled]="addOnArray.length === 0">Next Step</button><!---->
+      </div>
+</div>

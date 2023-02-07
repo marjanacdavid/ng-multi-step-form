@@ -1,0 +1,37 @@
+.form--container {
+  display: flex;
+  width: 94rem;
+  height: 60rem;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1.5rem;
+  background-color: #fff;
+  padding: 1.6rem;
+}
+.personal--info-title h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  padding-bottom: 1.1rem;
+  color: #022959;
+  padding-left: 25rem;
+}
+
+.personal--info-title p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #9699aa;
+  padding-bottom: 4rem;
+  /*padding-left: 10rem;*/
+  padding-left: 13rem;
+  padding-right: 34rem;
+}
+
+.personal--info-label {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #022959;
+  line-height: 1.6rem;
+}
+.mb-5{
+  padding-left: 30rem;
+}

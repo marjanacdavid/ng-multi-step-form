@@ -1,0 +1,53 @@
+<!--<div class="step--container">
+  <div class="step--active">
+    <div class="step--current step-1"><!--routerLink="/your-info"-->
+   <!--  <span class="step-num"
+      routerLink="/form"
+      routerLinkActive="active"
+      >1</span>
+      <p class="step-text">STEP 1</p>
+      <p class="step-title">YOUR INFO</p>
+    </div>
+    <div class="step--current step-2">
+      <span class="step-num"
+      routerLink="/select-plan"
+      routerLinkActive="active"
+      >2</span>
+      <p class="step-text">STEP 2</p>
+      <p class="step-title">SELECT PLAN</p>
+    </div>
+    <div class="step--current step-3">
+      <span class="step-num "
+      routerLink="/add-ons"
+      routerLinkActive="active"
+      >3</span>
+      <p class="step-text">STEP 3</p>
+      <p class="step-title">ADD-ONS</p>
+    </div>
+    <div class="step--current step-4">
+      <span class="step-num"
+      routerLink="/summary"
+      routerLinkActive="active"
+      >4</span>
+      <p class="step-text">STEP 4</p>
+      <p class="step-title">SUMMARY</p>
+    </div>
+  </div>
+</div>
+-->
+<div class="step--container" *ngIf="currentStep !== 5" >
+  <div class="step--active" >
+    <div class="step--current step-1" *ngFor="let step of steps">
+     <span class="step-num"
+      (click)="goToStep(step.id)"
+      [ngStyle]="{
+        'background-color': step.isActive ? '#bee2fd' : 'transparent',
+        'color': step.isActive ? 'black' : 'white'
+      }"
+       >{{ step.id }}</span>
+      <p class="step-text">STEP {{step.id }}</p>
+      <p class="step-title">{{ step.title }}</p>
+    </div>
+  </div>
+</div>
+

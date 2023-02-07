@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 1.6rem;
+  background-color: #eff5ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* LAYOUT */
+
+.container {
+  width: 94rem;
+  height: 60rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem;
+}
+
+/* Debug */
+
+.d1 {
+  border: 1px solid red;
+}
+
+.d-form {
+  border: 1px solid green;
+}
+
+.d-perso {
+  border: 1px solid blue;
+}
+
+.d-step {
+  border: 1px solid darkmagenta;
+}
+

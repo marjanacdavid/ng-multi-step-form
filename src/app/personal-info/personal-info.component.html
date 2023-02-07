@@ -1,0 +1,66 @@
+<div class="form--container">
+  <form [formGroup]="personalInfoForm" >
+  <div class="personal--info-container">
+    <div class="personal--info-title">
+      <h2>Personal info</h2>
+      <p>Please provide your name, email address, and phone number.</p>
+    </div>
+    <div class="personal--info-form">
+      <div class="form--name">
+        <div class="form--label-error" >
+          <label
+            class="personal--info-label"
+          >Name</label>
+        </div>
+        <input
+          class="personal--info-input"
+          formControlName="fullname"
+          placeholder="e.g. John Doe"
+          type="text"
+        >
+      </div>
+      <div class="form--email">
+        <div class="form--label-error">
+          <label
+            class="personal--info-label"
+          >Email Address</label>
+        </div>
+        <input
+          class="personal--info-input"
+          formControlName="email"
+          placeholder="e.g. someone@example.com"
+          type="email"
+        >
+      </div>
+      <div class="form--phone">
+        <div class="form--label-error">
+          <label
+            class="personal--info-label"
+          >Phone Number</label>
+        </div>
+        <input
+          class="personal--info-input"
+          formControlName="phone"
+          placeholder="e.g. +387 234 567 890"
+          type="tel"
+        >
+      </div>
+    </div>
+  <div class="form--buttons">
+  <button class="btn btn-primary submit"
+  (click)="onNextStep(2); completeStep()"
+  [disabled]="personalInfoForm.invalid">Next Step</button>
+  </div>
+</div>
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+

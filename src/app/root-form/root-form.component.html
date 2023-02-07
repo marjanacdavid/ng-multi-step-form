@@ -1,0 +1,60 @@
+
+<div class="form--container">
+  <!--<app-step></app-step>-->
+  <div class="form--container">
+  <div class="step--container" >
+    <div class="step--active" >
+      <div class="step--current step-1" *ngFor="let step of steps"><!--routerLink="/your-info"  routerLinkActive="active"-->
+       <span class="step-num"
+        (click)="goToStep(step.id)"
+        [ngStyle]="{
+          'background-color': step.isActive ? '#bee2fd' : 'transparent',
+          'color': step.isActive ? 'black' : 'white'
+        }"
+        disabled="step.isCompleted === false"
+         >{{ step.id }}</span>
+        <p class="step-text" >STEP {{step.id }}</p>
+        <p class="step-title">{{ step.title }}</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <app-personal-info
+  *ngIf="currentStep === 1"
+  (step)="onNextStep($event)"
+  [stepsArray]="steps">
+  </app-personal-info>
+ <app-select-plan
+ *ngIf="currentStep === 2"
+ (step)="onNextStep($event)"
+ (step)="onPrevStep($event)"
+ (plan)="getPlan($event)"
+ (monthlyPrice)="getMonthlyPrice($event)"
+ (yearlyPrice)="getYearlyPrice($event)"
+ (monthly)="getMonthly($event)"
+ (yearly)="getYearly($event)"
+ (checkMonthly)="getCheckMonthly($event)"
+ [stepsArray]="steps">
+ </app-select-plan>
+
+  <app-add-ons
+  *ngIf="currentStep === 3"
+  (step)="onNextStep($event)"
+  (step)="onPrevStep($event)"
+  [monthly]="isMonthly"
+  (extras)="addExtras($event)"
+  [stepsArray]="steps">
+  </app-add-ons>
+
+  <app-summary
+  *ngIf="currentStep === 4"
+  (step)="onNextStep($event)"
+  (step)="onPrevStep($event)"
+  [items]="summary"
+  [extras]="extrasArray"
+  [stepsArray]="steps">
+  </app-summary>
+
+    <app-thank-you *ngIf="currentStep === 5"></app-thank-you>
+
+</div>

@@ -1,0 +1,41 @@
+u angular.json file u development je bilo po default
+// "buildOptimizer": false,
+              // "optimization": false,
+              // "vendorChunk": true,
+              // "extractLicenses": false,
+              // "sourceMap": true,
+              // "namedChunks": true,
+
+
+,zamjenio sam sa postojecim.
+
+
+
+.angular.json
+{development
+// "buildOptimizer": false,
+              // "optimization": false,
+              // "vendorChunk": true,
+              // "extractLicenses": false,
+              // "sourceMap": true,
+              // "namedChunks": true,
+
+
+
+
+
+
+
+
+
+ovo je stackblitz ng10
+"development": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
